@@ -41,9 +41,28 @@ function Fraction(numenator, denominator){
     this.denomintaor = denominator;
 }
 
-Fraction.prototype.summ() = function (){
+Fraction.prototype.summ = function (frac1, frac2){
+    
+    commonDunemanator = frac1.denominator * frac2.denominator;
+
+    frac1Num *= parseInt(commonDunemanator / frac1.denominator);
+    frac2NUm *= parseInt(commonDunemanator / frac2.denominator);
+    
+    summNum = frac1num + frac2NUm;
+
+    return new Fraction(summNum, commonDunemanator);
 
 }
+
+let fracc1 = new Fraction(1, 5);
+let fracc2 = new Fraction(1, 3);
+
+let fr = fracc1.summ(fracc1. fracc2);
+console.log(fr.numenator);
+console.log(fr.denominator);
+
+
+
 // Задание 3
 // Создать объект, описывающий время (часы, минуты, секунды), и следующие функции для работы с этим объектом.
 // 1. Функция вывода времени на экран.
@@ -59,16 +78,41 @@ Fraction.prototype.summ() = function (){
 // «20:31:15», а не «20:30:75»
 
 
-let time = {
-    hours: 12,
-    minutes: 23,
-    seconds: 45,
+// function MyTime(hours, minutes, seconds){
+//     this.hours = hours;
+//     this.minutes = minutes;
+//     this.seconds = seconds;
+// }
 
-    showTime: function() {
-        console.log(`${hours}::${minutes}::${seconds}`)
-    },
+// MyTime.prototype.showTime = function() {
+//     console.log(`${this.hours}:${this.minutes}:${this.seconds}`)
+// }
 
-    changeSeconds: function(){
-        
-    }
-}
+// MyTime.prototype.changeSeconds = function(sec){
+//     this.seconds += sec;
+
+//     if (this.seconds >= 60){
+//         this.minutes += parseInt(this.seconds / 60);
+//         this.seconds = this.seconds % 60;
+//     }
+// }
+
+// MyTime.prototype.changeMinutes = function(min){
+//     this.minutes += min;
+
+//     if (this.minutes >= 60){
+//         this.hours += parseInt(this.minutes / 60);
+//         this.minutes = this.minutes % 60;
+//     }
+// }
+
+// MyTime.prototype.changeHours = function(hours){
+//     this.hours += hours;
+// }
+
+// let t = new MyTime(1, 23, 45);
+
+// t.changeSeconds(35);
+// t.changeMinutes(60);
+// t.changeHours(4);
+// t.showTime();
