@@ -38,28 +38,50 @@
 
 function Fraction(numenator, denominator){
     this.numenator = numenator;
-    this.denomintaor = denominator;
+    this.denominator = denominator;
 }
 
-Fraction.prototype.summ = function (frac1, frac2){
+Fraction.prototype.summ = function (frac2){
     
-    commonDunemanator = frac1.denominator * frac2.denominator;
+    commonDunemanator = this.denominator * frac2.denominator;
 
-    frac1Num *= parseInt(commonDunemanator / frac1.denominator);
-    frac2NUm *= parseInt(commonDunemanator / frac2.denominator);
-    
-    summNum = frac1num + frac2NUm;
-
+    summNum = this.numenator * parseInt(commonDunemanator / this.denominator) + frac2.numenator * parseInt(commonDunemanator / frac2.denominator);                                                                                                                                                                                                                                                        
     return new Fraction(summNum, commonDunemanator);
 
 }
 
-let fracc1 = new Fraction(1, 5);
-let fracc2 = new Fraction(1, 3);
+Fraction.prototype.minus = function (frac2){
 
-let fr = fracc1.summ(fracc1. fracc2);
-console.log(fr.numenator);
-console.log(fr.denominator);
+    commonDunemanator = this.denominator * frac2.denominator;
+
+    summNum = this.numenator * parseInt(commonDunemanator / this.denominator) - frac2.numenator * parseInt(commonDunemanator / frac2.denominator);                                                                                                                                                                                                                                                        
+    return new Fraction(summNum, commonDunemanator);
+}
+
+Fraction.prototype.multiply = function (frac2){
+
+    return new Fraction(this.numenator * frac2.numenator, this.denominator * frac2.denominator);
+}
+
+Fraction.prototype.devide = function (frac2){
+
+    return new Fraction(this.numenator * frac2.denomenator, this.denominator * frac2.numinator);
+}
+
+Fraction.prototype.decrease = function (frac2){
+
+    
+}
+
+
+let fracc1 = new Fraction(2, 5);
+let fracc2 = new Fraction(1, 10);
+
+let frSumm = fracc1.summ(fracc2);
+let frMinus = fracc1.minus(fracc2);
+
+console.log(frMinus.numenator);
+console.log(frMinus.denominator);
 
 
 
